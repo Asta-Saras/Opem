@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video and Login Box</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            background: url('Phoenix Phone Wallpaper.jpeg') no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .video-container, .login-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .video-container video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .login-container {
+            opacity: 0; /* Initially hidden */
+            transition: opacity 1.5s ease; /* Fade-in transition */
+            justify-content: center;
+            align-items: center;
+        }
+        .login-card {
+            width: 100%;
+            max-width: 400px;
+        }
+    </style>
+</head>
+<body>
+    <div class="video-container">
+        <video autoplay muted>
+            <source src="D:\Project\WhatsApp Video 2024-10-14 at 10.52.15_6cabf5cb.mp4" type="video/mp4"> <!-- Update with correct video path -->
+            Your browser does not support the video tag.
+        </video>
+    </div>
+    <div class="login-container">
+        <div class="card p-4 login-card">
+            <h3 class="mb-4">Login</h3>
+            <form>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" class="form-control">
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Login</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // After 5 seconds, hide the video and show the login box with a fade-in effect
+        setTimeout(() => {
+            // Hide the video container
+            document.querySelector('.video-container').style.display = 'none';
+            
+            // Show and fade-in the login container
+            const loginContainer = document.querySelector('.login-container');
+            loginContainer.style.opacity = 1; // Make it visible
+        }, 5000); // 5000 milliseconds = 5 seconds
+    </script>
+</body>
+</html>
